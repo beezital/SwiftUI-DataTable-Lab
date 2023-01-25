@@ -23,6 +23,7 @@
 		B63A42952981652A00DF20F9 /* SheeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A42942981652A00DF20F9 /* SheeterView.swift */; };
 		B68D8A382981D37700353E92 /* NavigationInSheeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68D8A372981D37700353E92 /* NavigationInSheeterView.swift */; };
 		B68D8A3B2981D50400353E92 /* NavigationStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68D8A3A2981D50400353E92 /* NavigationStepView.swift */; };
+		B68D8A3D2981E11400353E92 /* NavigationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68D8A3C2981E11400353E92 /* NavigationItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		B63A42942981652A00DF20F9 /* SheeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheeterView.swift; sourceTree = "<group>"; };
 		B68D8A372981D37700353E92 /* NavigationInSheeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInSheeterView.swift; sourceTree = "<group>"; };
 		B68D8A3A2981D50400353E92 /* NavigationStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStepView.swift; sourceTree = "<group>"; };
+		B68D8A3C2981E11400353E92 /* NavigationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				B6202433298019EC000EFA07 /* DataTableApp.swift */,
 				B6202435298019EC000EFA07 /* ContentView.swift */,
+				B68D8A3C2981E11400353E92 /* NavigationItemView.swift */,
 				B63A429229815F8400DF20F9 /* AboutView.swift */,
 				B62024462980505A000EFA07 /* TableView.swift */,
 				B63A4290298130FB00DF20F9 /* FilteredTableView.swift */,
@@ -195,6 +198,7 @@
 				B6202436298019EC000EFA07 /* ContentView.swift in Sources */,
 				B620244D29805C99000EFA07 /* NavigationInSheetView.swift in Sources */,
 				B6202434298019EC000EFA07 /* DataTableApp.swift in Sources */,
+				B68D8A3D2981E11400353E92 /* NavigationItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

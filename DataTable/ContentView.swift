@@ -10,16 +10,44 @@ import CoreData
 
 struct ContentView: View {
 
+    @EnvironmentObject var navigationState: NavigationState
+
     var body: some View {
         NavigationView {
-            List {
-                NavigationLink("Table") {
-//                    TableView()
-                    NavigationStepView()
+            ScrollView {
+                
+                VStack(spacing: 20) {
+                    NavigationLink("Table") {
+//                        NavigationStepView()
+                        TableView()
+                    }
+                    NavigationLink("About") {
+                        AboutView()
+                    }
                 }
-                NavigationLink("About") {
-                    AboutView()
-                }
+                
+//                VStack {
+//                    // Section like
+//                    VStack(alignment: .leading) {
+//                        NavigationItemView(
+//                            selection: .table,
+//                            destination: NavigationStepView(),
+//                            isActive: $navigationState.isSelectionTable,
+//                            title: "Table",
+//                            systemImage: "tablecells"
+//                        )
+//
+//                        NavigationItemView(
+//                            selection: .about,
+//                            destination: AboutView(),
+//                            isActive: $navigationState.isSelectionAbout,
+//                            title: "About",
+//                            systemImage: "questionmark.bubble.fill")
+//
+//                    }
+//                    .padding(.vertical, 10)
+//                }
+//                .padding(.horizontal)
             }
             .navigationTitle("DataTable App")
 
