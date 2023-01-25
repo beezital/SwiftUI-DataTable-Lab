@@ -13,8 +13,10 @@ struct AboutView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Demonstrate CoreData, NavigationView and Sheets")
-            Text("also a custom made simple table with sortable columns")
+            Text("Demonstrate CoreData, NavigationView and Sheets.")
+            Text("Also a custom made simple table with sortable columns.")
+            Text("Plus a custom NavigationView SideBar.")
+            Text("Used as sandpit to debug issue with self dismissing sheets.")
         }
         .navigationTitle("About")
         .navigationBarTitleDisplayMode(.inline)

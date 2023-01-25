@@ -103,7 +103,7 @@ struct ContentView: View {
                             },
                             isActive: $navigationState.isSelectionAbout,
                             title: "About",
-                            systemImage: "questionmark.bubble.fill")
+                            systemImage: "questionmark.circle.fill")
 
                     }
                     .padding(.vertical, 10)
