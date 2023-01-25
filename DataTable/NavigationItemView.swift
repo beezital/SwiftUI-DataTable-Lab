@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct NavigationItemView: View {
+// https://stackoverflow.com/questions/56833659/what-is-content-in-swiftui
+struct NavigationItemView<Content:View>: View {
     
     @EnvironmentObject var navigationState: NavigationState
     
@@ -15,20 +16,20 @@ struct NavigationItemView: View {
     private let ICON_SIZE: Double = 25
 
     var selection: NavigationState.Selection
-    var destination: any View
+    var destination: () -> Content
     @Binding var isActive: Bool
     var title: String
     var systemImage: String
-    var label: (any View)?
+    var label: (() -> Content)?
 
     var body: some View {
-        NavigationLink(destination: AnyView(destination), isActive: $isActive) { EmptyView() }
+        NavigationLink(destination: destination(), isActive: $isActive) { EmptyView() }
         Button {
             navigationState.select(selection)
         } label: {
             if let labelView = label {
                 HStack {
-                    AnyView(labelView)
+                    labelView()
                         .foregroundColor(navigationState.selection == selection ? .white : Color(UIColor.label))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .contentShape(Rectangle())
