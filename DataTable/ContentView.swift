@@ -9,6 +9,9 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    private let V_PADDING: Double = 12
+    private let ICON_SIZE: Double = 25
 
     @EnvironmentObject var navigationState: NavigationState
 
@@ -16,15 +19,62 @@ struct ContentView: View {
         NavigationView {
             ScrollView {
                 
-                VStack(spacing: 20) {
-                    NavigationLink("Table") {
-//                        NavigationStepView()
-                        TableView()
+//                VStack(spacing: 20) {
+//                    NavigationLink("Table") {
+////                        NavigationStepView()
+//                        TableView()
+//                    }
+//                    NavigationLink("About") {
+//                        AboutView()
+//                    }
+//                }
+                
+                
+                NavigationLink(destination: TableView(), isActive: $navigationState.isSelectionTable) { EmptyView() }
+                Button {
+                    navigationState.select(.table)
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(systemName: "tablecells")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: ICON_SIZE, maxHeight: ICON_SIZE, alignment: .center)
+                            .foregroundColor(navigationState.selection == .table ? .white : Color.accentColor)
+                        Text("Table")
+                            .font(.title3)
+                            .foregroundColor(navigationState.selection == .table ? .white : Color(UIColor.label))
                     }
-                    NavigationLink("About") {
-                        AboutView()
-                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(V_PADDING)
+                .background(navigationState.selection == .table ? Color.accentColor : .clear)
+                .clipShape(RoundedRectangle(cornerSize: CGSize(width: V_PADDING, height: V_PADDING)))
+                
+                
+                NavigationLink(destination: AboutView(), isActive: $navigationState.isSelectionAbout) { EmptyView() }
+                Button {
+                    navigationState.select(.about)
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(systemName: "questionmark.bubble.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: ICON_SIZE, maxHeight: ICON_SIZE, alignment: .center)
+                            .foregroundColor(navigationState.selection == .about ? .white : Color.accentColor)
+                        Text("About")
+                            .font(.title3)
+                            .foregroundColor(navigationState.selection == .about ? .white : Color(UIColor.label))
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(V_PADDING)
+                .background(navigationState.selection == .about ? Color.accentColor : .clear)
+                .clipShape(RoundedRectangle(cornerSize: CGSize(width: V_PADDING, height: V_PADDING)))
+                
                 
 //                VStack {
 //                    // Section like
