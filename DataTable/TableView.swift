@@ -19,7 +19,7 @@ struct TableView: View {
 
     var body: some View {
         FilteredTableView(searchText: searchText)
-            .searchable(text: $searchText)
+//            .searchable(text: $searchText)
         .toolbar {
             ToolbarItem {
                 Button(action: addItem) {

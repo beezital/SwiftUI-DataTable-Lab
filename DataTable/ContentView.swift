@@ -14,13 +14,17 @@ struct ContentView: View {
         NavigationView {
             List {
                 NavigationLink("Table") {
-                    TableView()
+//                    TableView()
+                    NavigationStepView()
                 }
                 NavigationLink("About") {
                     AboutView()
                 }
             }
             .navigationTitle("DataTable App")
+
+//            TableView()
+//            NavigationStepView()
         }
     }
 }

@@ -21,6 +21,8 @@
 		B63A4291298130FB00DF20F9 /* FilteredTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A4290298130FB00DF20F9 /* FilteredTableView.swift */; };
 		B63A429329815F8400DF20F9 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A429229815F8400DF20F9 /* AboutView.swift */; };
 		B63A42952981652A00DF20F9 /* SheeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A42942981652A00DF20F9 /* SheeterView.swift */; };
+		B68D8A382981D37700353E92 /* NavigationInSheeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68D8A372981D37700353E92 /* NavigationInSheeterView.swift */; };
+		B68D8A3B2981D50400353E92 /* NavigationStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68D8A3A2981D50400353E92 /* NavigationStepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		B63A4290298130FB00DF20F9 /* FilteredTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredTableView.swift; sourceTree = "<group>"; };
 		B63A429229815F8400DF20F9 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B63A42942981652A00DF20F9 /* SheeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheeterView.swift; sourceTree = "<group>"; };
+		B68D8A372981D37700353E92 /* NavigationInSheeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInSheeterView.swift; sourceTree = "<group>"; };
+		B68D8A3A2981D50400353E92 /* NavigationStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +80,13 @@
 				B63A429229815F8400DF20F9 /* AboutView.swift */,
 				B62024462980505A000EFA07 /* TableView.swift */,
 				B63A4290298130FB00DF20F9 /* FilteredTableView.swift */,
-				B63A42942981652A00DF20F9 /* SheeterView.swift */,
 				B62024482980537E000EFA07 /* DetailView.swift */,
 				B620244C29805C99000EFA07 /* NavigationInSheetView.swift */,
 				B620244A29805936000EFA07 /* EditView.swift */,
 				B6202437298019EF000EFA07 /* Assets.xcassets */,
 				B620243C298019EF000EFA07 /* Persistence.swift */,
 				B620244E29806543000EFA07 /* ClearableTextField.swift */,
+				B68D8A392981D38100353E92 /* Sheeter */,
 				B620243E298019EF000EFA07 /* DataTable.xcdatamodeld */,
 				B6202439298019EF000EFA07 /* Preview Content */,
 			);
@@ -95,6 +99,16 @@
 				B620243A298019EF000EFA07 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B68D8A392981D38100353E92 /* Sheeter */ = {
+			isa = PBXGroup;
+			children = (
+				B68D8A3A2981D50400353E92 /* NavigationStepView.swift */,
+				B63A42942981652A00DF20F9 /* SheeterView.swift */,
+				B68D8A372981D37700353E92 /* NavigationInSheeterView.swift */,
+			);
+			path = Sheeter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,10 +182,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B63A4291298130FB00DF20F9 /* FilteredTableView.swift in Sources */,
+				B68D8A382981D37700353E92 /* NavigationInSheeterView.swift in Sources */,
 				B6202440298019EF000EFA07 /* DataTable.xcdatamodeld in Sources */,
 				B63A429329815F8400DF20F9 /* AboutView.swift in Sources */,
 				B63A42952981652A00DF20F9 /* SheeterView.swift in Sources */,
 				B62024492980537E000EFA07 /* DetailView.swift in Sources */,
+				B68D8A3B2981D50400353E92 /* NavigationStepView.swift in Sources */,
 				B62024472980505B000EFA07 /* TableView.swift in Sources */,
 				B620243D298019EF000EFA07 /* Persistence.swift in Sources */,
 				B620244F29806543000EFA07 /* ClearableTextField.swift in Sources */,

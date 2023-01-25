@@ -11,6 +11,11 @@ struct SheeterView: View {
     
     @State private var isShowingSheet = false
     
+    init() {
+        print("SheeterView: init")
+    }
+    
+    
     var body: some View {
         VStack {
             Text("SheeterView")
@@ -20,7 +25,7 @@ struct SheeterView: View {
             .padding()
         }
         .sheet(isPresented: $isShowingSheet) {
-            Text("Sheet")
+            NavigationInSheeterView()
         }
     }
 }
