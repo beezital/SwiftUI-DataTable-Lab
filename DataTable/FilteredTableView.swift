@@ -42,25 +42,7 @@ struct FilteredTableView: View {
 
     var body: some View {
         List {
-            Section(header:
-                GeometryReader { geometry in
-                    ZStack(alignment: .leading) {
-                        ColumnHeaderView(title: "Title", sortKeyValue: "title", sortKeyString: $savedSortKey, sortOrderString: $savedSortOrder)
-                            .frame(maxWidth: columnWidth(0, maxWidth: geometry.size.width), alignment: .leading)
-                            .offset(CGSize(width: columnOffset(0, maxWidth: geometry.size.width), height: 0))
-
-                        ColumnHeaderView(title: "Timestamp", sortKeyValue: "timestamp", sortKeyString: $savedSortKey, sortOrderString: $savedSortOrder)
-                            .frame(maxWidth: columnWidth(1, maxWidth: geometry.size.width), alignment: .trailing)
-                            .offset(CGSize(width: columnOffset(1, maxWidth: geometry.size.width), height: 0))
-                        
-                    }
-                    .frame(maxHeight: .infinity)
-                }
-                .font(.system(size: 15, weight: .regular, design: .default))
-                .padding([.bottom], 5)
-                .padding([.trailing], 20)
-                .listRowSeparator(.hidden) // https://stackoverflow.com/questions/56553672/how-to-remove-the-line-separators-from-a-list-in-swiftui-without-using-foreach
-            ){
+            Section(header: HeaderView(savedSortKey: $savedSortKey, savedSortOrder: $savedSortOrder)) {
                 ForEach(items) { item in
                     NavigationLink {
                         DetailView(item: item)
@@ -111,6 +93,34 @@ struct FilteredTableView: View {
  
  ==================================================================================================
  */
+
+
+struct HeaderView: View {
+    
+    @Binding var savedSortKey: String
+    @Binding var savedSortOrder: String
+
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                ColumnHeaderView(title: "Title", sortKeyValue: "title", sortKeyString: $savedSortKey, sortOrderString: $savedSortOrder)
+                    .frame(maxWidth: columnWidth(0, maxWidth: geometry.size.width), alignment: .leading)
+                    .offset(CGSize(width: columnOffset(0, maxWidth: geometry.size.width), height: 0))
+
+                ColumnHeaderView(title: "Timestamp", sortKeyValue: "timestamp", sortKeyString: $savedSortKey, sortOrderString: $savedSortOrder)
+                    .frame(maxWidth: columnWidth(1, maxWidth: geometry.size.width), alignment: .trailing)
+                    .offset(CGSize(width: columnOffset(1, maxWidth: geometry.size.width), height: 0))
+                
+            }
+            .frame(maxHeight: .infinity)
+        }
+        .font(.system(size: 15, weight: .regular, design: .default))
+        .padding([.bottom], 5)
+        .padding([.trailing], 20)
+        .listRowSeparator(.hidden) // https://stackoverflow.com/questions/56553672/how-to-remove-the-line-separators-from-a-list-in-swiftui-without-using-foreach
+
+    }
+}
 
 private enum SortOrderString: String {
     case forward = "forward"

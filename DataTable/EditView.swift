@@ -31,9 +31,13 @@ struct EditView: View {
                     .frame(maxWidth: 100, alignment: .trailing)
                 Text("\(newTimestamp, formatter: itemFormatter)")
                 Spacer()
-                Button("Set to now") {
-                    newTimestamp = Date()
-                }
+                Text("Set to now")
+                    .foregroundColor(Color.accentColor)
+                    .onTapGesture() {
+                        withAnimation() {
+                            newTimestamp = Date()
+                        }
+                    }
             }
         }
         .onChange(of: isPresented) { newIsPresented in
