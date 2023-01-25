@@ -21,6 +21,8 @@ struct ContentView: View {
                         Text("Demonstrate CoreData, NavigationView and Sheets")
                         Text("also a custom made simple table with sortable columns")
                     }
+                    .navigationTitle("About")
+                    .navigationBarTitleDisplayMode(.inline)
                 }
             }
             .navigationTitle("DataTable App")
