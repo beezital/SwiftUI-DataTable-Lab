@@ -37,6 +37,7 @@ struct FilteredTableView: View {
             animation: .default
         )
         
+        print("FilteredTableView: init")
     }
     
 
@@ -46,6 +47,7 @@ struct FilteredTableView: View {
                 ForEach(items) { item in
                     NavigationLink {
                         DetailView(item: item)
+//                        SheeterView()
                     } label: {
                         ItemRowView(item: item)
                     }
@@ -101,6 +103,7 @@ struct HeaderView: View {
     @Binding var savedSortOrder: String
 
     var body: some View {
+//        Text("Header")
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 ColumnHeaderView(title: "Title", sortKeyValue: "title", sortKeyString: $savedSortKey, sortOrderString: $savedSortOrder)
@@ -110,7 +113,7 @@ struct HeaderView: View {
                 ColumnHeaderView(title: "Timestamp", sortKeyValue: "timestamp", sortKeyString: $savedSortKey, sortOrderString: $savedSortOrder)
                     .frame(maxWidth: columnWidth(1, maxWidth: geometry.size.width), alignment: .trailing)
                     .offset(CGSize(width: columnOffset(1, maxWidth: geometry.size.width), height: 0))
-                
+
             }
             .frame(maxHeight: .infinity)
         }
@@ -225,6 +228,9 @@ private struct ItemRowView: View {
     @ObservedObject var item: Item
     
     var body: some View {
+//        Text("row")
+//        Text("\(item.title ?? "")")
+        
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 Text(item.title ?? "")

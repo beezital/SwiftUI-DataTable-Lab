@@ -13,6 +13,9 @@ struct TableView: View {
 
     @State var searchText: String = ""
 
+    init() {
+        print("TableView: init")
+    }
 
     var body: some View {
         FilteredTableView(searchText: searchText)
@@ -29,6 +32,12 @@ struct TableView: View {
         }
         .navigationTitle("Items")
         .navigationBarTitleDisplayMode(.inline)
+        .onChange(of: searchText) { newSearchText in
+            print("TableView: onChange of searchText \(newSearchText)")
+        }
+        .onChange(of: viewContext) { newViewContext in
+            print("TableView: onChange of viewContext \(newViewContext)")
+        }
     }
     
     

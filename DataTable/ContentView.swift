@@ -17,12 +17,7 @@ struct ContentView: View {
                     TableView()
                 }
                 NavigationLink("About") {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Demonstrate CoreData, NavigationView and Sheets")
-                        Text("also a custom made simple table with sortable columns")
-                    }
-                    .navigationTitle("About")
-                    .navigationBarTitleDisplayMode(.inline)
+                    AboutView()
                 }
             }
             .navigationTitle("DataTable App")
